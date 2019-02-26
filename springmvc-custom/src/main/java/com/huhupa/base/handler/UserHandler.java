@@ -6,10 +6,10 @@ import com.huhupa.base.annotation.RequestMapping;
 @Controller
 public class UserHandler {
 	
-	@RequestMapping("/findUser")
-	public String findUser() {
+	@RequestMapping("/deleteUser")
+	public String deleteUser() {
 		System.out.println("UserHandler.findUser()");
-		return "查找用户";
+		return "删除用户";
 	}
 
 }

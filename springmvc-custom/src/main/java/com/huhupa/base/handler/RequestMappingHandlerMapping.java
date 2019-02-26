@@ -9,7 +9,7 @@ import com.huhupa.base.handlermethod.HandlerMethod;
 
 public class RequestMappingHandlerMapping implements HandlerMapping {
 
-	private Map<String, HandlerMethod> urlMapping = new HashMap<>();
+	public static  Map<String, HandlerMethod> urlMapping = new HashMap<>();
 	
 	// 在本对象被创建的时候就去建立映射关系 
 	public void init() {
@@ -20,6 +20,10 @@ public class RequestMappingHandlerMapping implements HandlerMapping {
 	public Object getHandler(HttpServletRequest request) {
 		HandlerMethod handlerMethod = urlMapping.get(request.getRequestURI());
 		return handlerMethod;
+	}
+	
+	public static void addUrlAndHandlerMethodMapping(String url, HandlerMethod handlerMethod) {
+		urlMapping.put(url, handlerMethod);
 	}
 
 }
