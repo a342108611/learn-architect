@@ -14,6 +14,10 @@
     <display-name>DispatcherServlet</display-name>
     <servlet-name>DispatcherServlet</servlet-name>
     <servlet-class>com.huhupa.base.DispatcherServlet</servlet-class>
+    <init-param>
+    	<param-name>initFile</param-name>
+    	<param-value>src\main\resources\spring.xml</param-value>
+    </init-param>
     <load-on-startup>2</load-on-startup>
   </servlet>
   <servlet-mapping>

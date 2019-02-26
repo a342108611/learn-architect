@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="addUser" class="com.huhupa.base.handler.AddUserHandler"></bean>
+	<bean id="queryUser" class="com.huhupa.base.handler.QueryUserHandler"></bean>
+	<component-scan package="com.huhupa.base.handler"></component-scan>
+</beans>
