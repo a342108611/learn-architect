@@ -12,6 +12,9 @@ import org.dom4j.Element;
 import org.dom4j.XPath;
 import org.dom4j.io.SAXReader;
 
+import com.huhupa.base.annotation.Controller;
+import com.huhupa.common.utils.ClazzUtil;
+
 /**
  * ����xml�ļ�
  * @author Administrator
@@ -38,11 +41,33 @@ public class XmlReader {
 	}
 
 	private void parseComponentScanElement(Element element) {
-		Map<String, Object> beanDefinition = new HashMap<String, Object>();
 		String attributeValue = element.attributeValue("package");
-		beanDefinition.put("class", attributeValue + ".UserHandler");
-		beanDefinition.put("name", "UserHandler");
-		GenericBeanDifinition.addBeanDefinition(beanDefinition);
+		List<String> clazzNames = ClazzUtil.getClazzName(attributeValue, true);
+		for (String clazzName : clazzNames) {
+			if (determineWhetherAnnotated(clazzName)) {
+				Map<String, Object> beanDefinition = new HashMap<String, Object>();
+				beanDefinition.put("class", clazzName);
+				beanDefinition.put("name", clazzName.substring(clazzName.lastIndexOf(".")));
+				GenericBeanDifinition.addBeanDefinition(beanDefinition);
+			}
+		}
+		
+	}
+
+	private boolean determineWhetherAnnotated(String clazzName) {
+		if (StringUtils.isNotBlank(clazzName)){
+			try {
+				Class<?> clazz = Class.forName(clazzName);
+				if (clazz.isAnnotationPresent(Controller.class)) {
+					return true;
+				}
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+		return false;
 	}
 
 	private void parseDefaultElement(Element element) {

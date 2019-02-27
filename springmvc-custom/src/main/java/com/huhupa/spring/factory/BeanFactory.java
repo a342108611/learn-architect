@@ -32,7 +32,7 @@ public class BeanFactory {
 			Object newInstance = Class.forName(clazz).newInstance();
 			beansOfNamesMap.put(name, newInstance);
 			beansOfClassTypeMap.put(newInstance.getClass(), newInstance);
-			Annotation[] annotations = newInstance.getClass().getAnnotations();
+//			Annotation[] annotations = newInstance.getClass().getAnnotations();
 			if(newInstance.getClass().isAnnotationPresent(Controller.class)) {
 				Method[] declaredMethods = newInstance.getClass().getDeclaredMethods();
 				if (declaredMethods != null && declaredMethods.length > 0) {

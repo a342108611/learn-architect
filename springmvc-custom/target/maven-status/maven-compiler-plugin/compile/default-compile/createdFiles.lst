@@ -7,7 +7,9 @@ com\huhupa\spring\factory\GenericBeanDifinition.class
 com\huhupa\base\annotation\Controller.class
 com\huhupa\base\handler\UserHandler.class
 com\huhupa\base\handler\RequestMappingHandlerMapping.class
+com\huhupa\common\utils\ClazzUtil.class
 com\huhupa\base\DispatcherServlet.class
+com\huhupa\base\handler\ProductController.class
 com\huhupa\spring\factory\RuntimeBeanReference.class
 com\huhupa\base\handlermethod\HandlerMethod.class
 com\huhupa\spring\factory\XmlReader.class
