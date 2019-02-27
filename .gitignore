@@ -3,6 +3,7 @@
 *.classpath
 *.settings
 *WebContent/META-INF
+*/bin
 
 # Log file
 *.log
