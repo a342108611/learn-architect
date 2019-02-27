@@ -7,9 +7,9 @@ public class RuntimeBeanReference {
 	public static void init(String path) {
 		XmlReader xmlReader = new XmlReader();
 		try {
-			// ½âÎöxml½«beanĞÅÏ¢´æ´¢µ½beanDifinitionÖĞ
+			// è§£æxmlå°†beanä¿¡æ¯å­˜å‚¨åˆ°beanDifinitionä¸­
 			xmlReader.parse(xmlReader.readDocument(path));
-			// ¸ù¾İbeanDefinitionĞÅÏ¢´´½¨bean
+			// æ ¹æ®beanDefinitionä¿¡æ¯åˆ›å»ºbean
 			BeanFactory.init();
 		} catch (DocumentException e) {
 			e.printStackTrace();

@@ -4,6 +4,8 @@
 *.settings
 *WebContent/META-INF
 */bin
+*.project
+ssm
 
 # Log file
 *.log
