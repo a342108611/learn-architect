@@ -1,5 +1,8 @@
 # Compiled class file
 *.class
+*.classpath
+*.settings
+*WebContent/META-INF
 
 # Log file
 *.log
